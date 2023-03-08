@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-d
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Register from './views/Register';
+import Login from './views/Login';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +14,14 @@ const router = createBrowserRouter([
     children: [{
       path: "about",
       element: <div>About Me</div>
-    }],
+    },{
+      path: "register",
+      element: <Register />
+    },{
+      path: "login",
+      element: <Login />
+    },
+  ],
     errorElement: <div>Error</div>
   }
 ]);

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import './App.css';
 import List from './views/List';
@@ -9,7 +9,7 @@ const App = () => {
   return(
     <div className='App'>
       <Header />
-      <Link to="about">About</Link>
+      <Outlet />
       <List />
     </div>
   )
