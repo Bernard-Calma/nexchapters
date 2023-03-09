@@ -17,7 +17,7 @@ const counterSlice = createSlice({
     }
 })
 
-console.log(counterSlice)
+// console.log(counterSlice)
 
 export const {add, minus} = counterSlice.actions;
 export default counterSlice.reducer;
