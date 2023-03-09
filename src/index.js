@@ -13,6 +13,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Register from './views/Register';
 import Login from './views/Login';
+import Home from './views/Home';
+import MangaList from './views/MangaList';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,12 @@ const router = createBrowserRouter([
     },{
       path: "login",
       element: <Login />
+    },{
+      path: "home",
+      element: <Home />
+    },{
+      path: "mangalist",
+      element: <MangaList />
     },
   ],
     errorElement: <div>Error</div>
