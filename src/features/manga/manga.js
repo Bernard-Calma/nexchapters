@@ -11,7 +11,7 @@ const mangaSlice = createSlice({
     initialState,
     reducers: {
         changeTitle: (state) => {
-            state.view = "Test"
+            state.title = "Test"
         },
         changeTotalChapters: (state) => {
             state.totalChapters = 10;
