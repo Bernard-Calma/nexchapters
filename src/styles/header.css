@@ -9,6 +9,12 @@
     box-shadow: 1px 1px 5px 3px gray;
 }
 
+.containerHeader > p {
+    display: inline-block;
+    width: 10px;
+    margin: 0;
+}
+
 .headerLogo {
     width: 400px;
     height: 70px;
@@ -17,8 +23,20 @@
 .headerLoginRegister {
     background-color: rgb(54, 53, 53);
     color: white;
-    width: 150px;
+    width: 200px;
     text-align: center;
     border-radius: 10px;
     padding: 0 10px;
+}
+
+
+.linkHeader{
+    text-decoration: none;
+    color: rgb(172, 217, 243);
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.linkHeader:hover{
+    color: rgb(92, 119, 136);
 }
