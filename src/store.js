@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./features/counter/counterSlice"
-import viewReducer from "./features/view/viewSlice"
+import mangaReducer from "./features/manga/manga"
 
 const store = configureStore({
     reducer: {
         counter: counterReducer,
-        view: viewReducer,
+        manga: mangaReducer,
     },
 })
 
