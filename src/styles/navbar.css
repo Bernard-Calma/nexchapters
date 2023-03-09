@@ -1,0 +1,24 @@
+.containerNavBar {
+    background-color: rgb(179, 177, 177);
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+    font-size: 20px;
+    border-bottom: solid black;
+    border-width: 5px;
+    padding-top: 5px;
+}
+
+.containerLink {
+    width: 150px;
+    display: inline-block;
+    background-color: white;
+    border: black solid 3px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: center;
+}
+
+.linkNavBar {
+    text-decoration: none;
+    color: black;
+}
