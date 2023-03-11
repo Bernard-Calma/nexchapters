@@ -1,15 +1,14 @@
 // Store
-import { useDispatch, useSelector } from "react-redux"
-import {changeCurrentChapter, changeTitle, changeTotalChapters} from "../features/manga/manga"
+import { useDispatch } from "react-redux";
+import {changeCurrentChapter, changeTitle, changeTotalChapters} from "../features/manga/mangaSlice"
 
-const Manga = () => {
+const Manga = (props) => {
     const dispatch = useDispatch();
-    const {manga} = useSelector((store) => store)
     return(
         <div>
-            <h2>Title: {manga.title}</h2>
-            <h2>Total Chapters: {manga.totalChapters}</h2>
-            <h2>Current Chapter: {manga.currentChapter}</h2>
+            <h2>Title: {props.manga.title}</h2>
+            <h2>Total Chapters: {props.manga.totalChapters}</h2>
+            <h2>Current Chapter: {props.manga.currentChapter}</h2>
             <button onClick={()=>{dispatch(changeTitle())}}>Change Title</button>
             <button onClick={()=>{dispatch(changeTotalChapters())}}>Change Total Chapters</button>
             <button onClick={()=>{dispatch(changeCurrentChapter())}}>Change Current Chapters</button>
