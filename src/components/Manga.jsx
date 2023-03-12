@@ -1,10 +1,12 @@
+import '../styles/manga.css'
+
 const Manga = (props) => {
     return(
-        <div>
-            <img src={props.manga.image} alt={props.manga.title}/>
-            <h2>Title: {props.manga.title}</h2>
-            <h2>Total Chapters: {props.manga.totalChapters}</h2>
-            <h2>Current Chapter: {props.manga.currentChapter}</h2>
+        <div className="containerManga">
+            <img src={props.manga.image} alt={props.manga.title} className="manga imgManga"/>
+            <h2 className="manga titleManga">Title: {props.manga.title}</h2>
+            <h2 className="manga totalChaptersManga">Total Chapters: {props.manga.total_chapters}</h2>
+            <h2 className="manga currentChaptersManga">Current Chapter: {props.manga.current_chapter}</h2>
          </div>
     )
 }
