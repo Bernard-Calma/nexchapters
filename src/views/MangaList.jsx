@@ -12,17 +12,14 @@ const MangaList = () => {
         dispatch(getMangaList())
     },[])
     return(
-        <div>
-            <h1>Manga List</h1>
-            <div className="containerMangaList">
-            {
-                mangaList.map(manga => 
-                    <Manga 
-                        manga = {manga}
-                        key = {manga.id}
-                    />)
-            }
-            </div>
+        <div className="containerMangaList">
+        {
+            mangaList.map(manga => 
+                <Manga 
+                    manga = {manga}
+                    key = {manga.id}
+                />)
+        }
         </div>
     )
 }
