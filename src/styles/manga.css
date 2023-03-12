@@ -1,10 +1,64 @@
-.containerManga {
+.containerManga, .containerNewManga {
     font-size: 14px;
     font-family: 'space mono';
     margin: 0 10px;
 }
 
-.imgManga{
+.imgManga, .containerNewManga{
     width: 200px;
     height: 300px;
+}
+
+.containerNewManga {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+}
+
+.btnAddNewManga {
+    font-size: 50px;
+    margin: auto;
+}
+
+.btnAddNewManga:hover{
+    cursor: pointer;
+}
+
+
+/* FORM */
+.containerAddManga {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(80, 80, 80);
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px rgb(255, 255, 255);
+    padding: 20px;
+    font-size: 30px;
+}
+
+.containerAddManga > form {
+    display: flex;
+    flex-direction: column;    
+}
+
+.containerAddManga > form > input{
+    width: 300px;
+    font-size: 25px;
+}
+
+.animeList > select{
+    width: 200px;
+    display: flex;
+    font-size: 25px;
+}
+
+.containerAddManga > form > label{
+    width: 200px;
+    margin: 10px auto;
+}
+
+.formImageNewManga {
+    width: 200px;
+    height: 200px;
 }

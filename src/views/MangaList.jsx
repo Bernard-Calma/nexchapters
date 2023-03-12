@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getMangaList } from "../features/manga/mangaSlice"
 import Manga from "../components/Manga"
+import NewManga from "../components/NewManga";
 import '../styles/mangaList.css'
 
 const MangaList = () => {
@@ -20,6 +21,9 @@ const MangaList = () => {
                     key = {manga.id}
                 />)
         }
+        <NewManga 
+            mangaList = {mangaList}
+        />
         </div>
     )
 }
