@@ -20,7 +20,7 @@
     margin: auto;
 }
 
-.btnAddNewManga:hover{
+.btnAddNewManga:hover, .fi:hover, .cancel:hover, .submit:hover{
     cursor: pointer;
 }
 
@@ -28,13 +28,54 @@
 /* FORM */
 .containerAddManga {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 500px;
-    height: 500px;
-    background-color: rgb(80, 80, 80);
+    background-color: black;
     border-radius: 10px;
     box-shadow: 0 0 5px 1px rgb(255, 255, 255);
-    padding: 20px;
     font-size: 30px;
+    display: none;
+}
+
+.formNav {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    border-top: solid white;
+    padding-top: 20px;
+}
+
+.formNavTop {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid white;
+}
+
+.addTitle{
+    margin: 0 20px;
+}
+
+.fi-rr-rectangle-xmark{
+    margin: auto 20px;
+    font-size: 25px;
+}
+
+.cancel {
+    text-decoration: underline;
+    color: red;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.submit {
+    border-radius: 10px;
+    font-size: 25px;
+    margin-right: 20px;
 }
 
 .containerAddManga > form {
@@ -61,4 +102,5 @@
 .formImageNewManga {
     width: 200px;
     height: 200px;
+    margin-top: 20px;
 }
