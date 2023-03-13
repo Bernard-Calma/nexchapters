@@ -5,8 +5,8 @@ const NewManga = (props) => {
         title: '',
         image: '',
         link: '',
-        totalChapters: null,
-        currentChapter: null,
+        // totalChapters: null,
+        currentChapter: "",
     })
 
     // List from mapping mangalist and grabing title
@@ -29,31 +29,39 @@ const NewManga = (props) => {
     }
 
     // Manga API call
-    const url = 'https://api.jikan.moe/v4/manga';
-    let queryTitle = "naruto"
-    let query = `?q=${queryTitle}?order_by="rank`;
+    // const url = 'https://api.jikan.moe/v4/manga';
+    // let queryTitle = "naruto"
+    // let query = `?q=${queryTitle}?order_by="rank`;
 
-    const getAnime = () => {
-        fetch(url + query)
-        .then(res => res.json())
-        .then(mangaList => 
-            // console.log(mangaList.data.map(
-            //     manga => {return {
-            //         'totalChapters': manga.chapters,
-            //         'titles': manga.titles[0],
-            //         'image': manga.images.webp.image_url
-            //     }}))
-            setMangaList(mangaList.data.map(
-                    manga => {return {
-                        'totalChapters': manga.chapters,
-                        'title': manga.titles[0].title,
-                        'image': manga.images.webp.image_url
-                    }}))
-            )
-    }
+    // const getAnime = () => {
+    //     fetch(url + query)
+    //     .then(res => res.json())
+    //     .then(mangaList => 
+    //         // console.log(mangaList.data.map(
+    //         //     manga => {return {
+    //         //         'totalChapters': manga.chapters,
+    //         //         'titles': manga.titles[0],
+    //         //         'image': manga.images.webp.image_url
+    //         //     }}))
+    //         setMangaList(mangaList.data.map(
+    //                 manga => {return {
+    //                     'totalChapters': manga.chapters,
+    //                     'title': manga.titles[0].title,
+    //                     'image': manga.images.webp.image_url
+    //                 }}))
+    //         )
+    // }
 
     const handleChange = (event) => {
         setNewManga({...newManga, [event.target.name]: event.target.value})
+    }
+
+    const handleAddManga = () => {
+        fetch("http://localhost:8000/manga/add",{
+            method: "POST",
+            body: newManga,
+        }).then(res => res.json())
+        .then(data => console.log(data))
     }
 
     useEffect(() => {
@@ -86,7 +94,7 @@ const NewManga = (props) => {
                 </form>
                 <div className="formNav">  
                         <a className="cancel" onClick={hideAddForm}>cancel</a>
-                        <button className="submit">Submit</button>
+                        <button className="submit" onClick={handleAddManga}>Submit</button>
                 </div>
             </div>
         </div>
