@@ -47,8 +47,8 @@ const NewManga = (props) => {
     }
 
     useEffect(() => {
-        getAnime()
-        console.log(mangaList)
+        // getAnime()
+        // console.log(mangaList)
     },[])
     
 
@@ -63,15 +63,15 @@ const NewManga = (props) => {
                 </div>
                 <img src="" alt="new manga" onError={imageStandBy} className="formImageNewManga"/>
                 <form>
-                    <label htmlFor="animeList" className="animeList">Anime List <select name="animeList"> 
+                    {/* <label htmlFor="animeList" className="animeList">Anime List <select name="animeList">
                         {
                             mangaList.map(manga => <option value={manga.title}>{manga.title}</option>)
                         }
-                    </select></label>
+                    </select></label> */}
                     <input type="text" name="title" placeholder="title"/>
-                    <input type="text" name="image" placeholder="image link"/>
+                    {/* <input type="text" name="image" placeholder="image link"/> */}
                     <input type="text" name="link" placeholder="webiste link"/>
-                    <input type="number" name="totalChapters" placeholder="total chapters"/>
+                    {/* <input type="number" name="totalChapters" placeholder="total chapters"/> */}
                     <input type="number" name="currentChapter" placeholder="current chapter"/>
                 </form>
                 <div className="formNav">  

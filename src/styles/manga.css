@@ -1,7 +1,11 @@
 .containerManga, .containerNewManga {
+    background-color: rgb(21, 22, 24);
+    border-radius: 20px;
+    padding: 20px;
     font-size: 14px;
     font-family: 'space mono';
     margin: 0 10px;
+    
 }
 
 .imgManga, .containerNewManga{
@@ -102,5 +106,5 @@
 .formImageNewManga {
     width: 200px;
     height: 200px;
-    margin-top: 20px;
+    margin: 20px;
 }
