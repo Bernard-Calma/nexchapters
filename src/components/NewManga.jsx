@@ -6,7 +6,7 @@ const NewManga = (props) => {
         image: '',
         link: '',
         totalChapters: null,
-        currentChapters: null,
+        currentChapter: null,
     })
 
     // List from mapping mangalist and grabing title
@@ -16,6 +16,12 @@ const NewManga = (props) => {
         event.target.src = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
     }
     const hideAddForm = () => {
+        setNewManga({
+            title: '',
+            image: '',
+            link: '',
+            currentChapter: ''
+        })
         document.querySelector(".containerAddManga").style.display = "none";
     }
     const showAddForm = () => {
@@ -46,6 +52,10 @@ const NewManga = (props) => {
             )
     }
 
+    const handleChange = (event) => {
+        setNewManga({...newManga, [event.target.name]: event.target.value})
+    }
+
     useEffect(() => {
         // getAnime()
         // console.log(mangaList)
@@ -68,11 +78,11 @@ const NewManga = (props) => {
                             mangaList.map(manga => <option value={manga.title}>{manga.title}</option>)
                         }
                     </select></label> */}
-                    <input type="text" name="title" placeholder="title"/>
-                    {/* <input type="text" name="image" placeholder="image link"/> */}
-                    <input type="text" name="link" placeholder="webiste link"/>
+                    <input type="text" name="title" placeholder="title" onChange={handleChange} value={newManga.title}/>
+                    <input type="text" name="image" placeholder="image link" onChange={handleChange} value={newManga.image}/>
+                    <input type="text" name="link" placeholder="webiste link" onChange={handleChange} value={newManga.link}/>
                     {/* <input type="number" name="totalChapters" placeholder="total chapters"/> */}
-                    <input type="number" name="currentChapter" placeholder="current chapter"/>
+                    <input type="number" name="currentChapter" placeholder="current chapter" onChange={handleChange} value={newManga.currentChapter}/>
                 </form>
                 <div className="formNav">  
                         <a className="cancel" onClick={hideAddForm}>cancel</a>
