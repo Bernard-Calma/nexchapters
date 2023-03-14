@@ -13,7 +13,7 @@ const Manga = (props) => {
             <h2 className="manga titleManga">Title: {props.manga.title}</h2>
             <h2 className="manga currentChaptersManga">Your Current Chapter: {props.manga.current_chapter}</h2>
             {/* <h2 className="manga totalChaptersManga">Total Chapters: {props.manga.total_chapters}</h2> */}
-            <a href={props.manga.link} target="_blank">Read Here</a>
+            <a href={props.manga.link} target="_blank" className='linkManga'>Read Here</a>
             <EditManga 
                 manga = {props.manga}
             />
