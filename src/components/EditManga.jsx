@@ -38,7 +38,7 @@ const EditManga = (props) => {
     return(
         <div className="containerEditManga">
             <div className="formNavTop">
-                <p className="addTitle">Add New</p>
+                <p className="addTitle">Edit</p>
                 <i className="fi fi-rr-rectangle-xmark" onClick={hideEditForm}></i>
             </div>
             <img src={manga.image} alt="new manga" onError={imageStandBy} className="formImageNewManga"/>

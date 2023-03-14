@@ -7,9 +7,12 @@ const Manga = (props) => {
         event.target.parentElement.lastChild.style.display = "flex"
         // document.querySelector(".containerEditManga").style.display = "flex";
     }
+    const imageStandBy = (event) => {
+        event.target.src = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
+    }
     return(
         <div className="containerManga">
-            <img src={props.manga.image} alt={props.manga.title} className="manga imgManga" onClick={showEdit}/>
+            <img src={props.manga.image} alt={props.manga.title} className="manga imgManga" onClick={showEdit} onError={imageStandBy}/>
             <h2 className="manga titleManga">Title: {props.manga.title}</h2>
             <h2 className="manga currentChaptersManga">Your Current Chapter: {props.manga.current_chapter}</h2>
             {/* <h2 className="manga totalChaptersManga">Total Chapters: {props.manga.total_chapters}</h2> */}

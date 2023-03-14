@@ -12,6 +12,7 @@ const NewManga = (props) => {
         // totalChapters: null,
         currentChapter: "",
     })
+    let [errorMessage, setErrorMessage] = useState('')
 
     // List from mapping mangalist and grabing title
     // const [mangaList, setMangaList] = useState(props.mangaList)
@@ -64,6 +65,12 @@ const NewManga = (props) => {
     }
 
     const handleAddManga = () => {
+        for (const [key, value] of Object.entries(newManga)) {
+            if (value === "") {
+                setErrorMessage("All fields should not be empty.")
+                return
+            }
+        }
         // console.log(newManga)
         fetch("http://localhost:8000/manga/add",{
             method: "POST",
@@ -75,6 +82,7 @@ const NewManga = (props) => {
         .then(() => {
             dispatch(getMangaList())
             hideAddForm()
+            setErrorMessage('')
         })
     }
     return(
@@ -98,6 +106,7 @@ const NewManga = (props) => {
                     {/* <input type="number" name="totalChapters" placeholder="total chapters"/> */}
                     <input type="number" name="currentChapter" placeholder="current chapter" onChange={handleChange} value={newManga.currentChapter}/>
                 </form>
+                <p className="errorMessage">{errorMessage}</p>
                 <div className="formNav">  
                         <a className="cancel" onClick={hideAddForm}>cancel</a>
                         <button className="submit" onClick={handleAddManga}>Submit</button>
