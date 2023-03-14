@@ -57,9 +57,13 @@ const NewManga = (props) => {
     }
 
     const handleAddManga = () => {
+        // console.log(newManga)
         fetch("http://localhost:8000/manga/add",{
             method: "POST",
-            body: newManga,
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newManga),
         }).then(res => res.json())
         .then(data => console.log(data))
     }

@@ -1,4 +1,5 @@
 .containerMangaList {
     display: flex;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
