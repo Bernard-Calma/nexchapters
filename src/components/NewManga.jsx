@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import { getMangaList } from "../features/manga/mangaSlice"
 
+// FUTURE PLAN: Auto populate manga when entering title
 const NewManga = (props) => {
+    const dispatch = useDispatch()
     const [newManga, setNewManga] = useState({
         title: '',
         image: '',
@@ -10,7 +14,7 @@ const NewManga = (props) => {
     })
 
     // List from mapping mangalist and grabing title
-    const [mangaList, setMangaList] = useState(props.mangaList)
+    // const [mangaList, setMangaList] = useState(props.mangaList)
 
     const imageStandBy = (event) => {
         event.target.src = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
@@ -65,16 +69,8 @@ const NewManga = (props) => {
             },
             body: JSON.stringify(newManga),
         }).then(res => res.json())
-        .then(data => console.log(data))
+        .then(() => dispatch(getMangaList()))
     }
-
-    useEffect(() => {
-        // getAnime()
-        // console.log(mangaList)
-    },[])
-    
-
-
     return(
         <div className="containerNewManga">
             <i className="fi fi-rr-add btnAddNewManga" onClick={showAddForm}></i>
