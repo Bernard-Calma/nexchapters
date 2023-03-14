@@ -138,7 +138,14 @@
 
 
 @media screen and (max-width: 600px){
+    /* Manga Container */
+  
+
     /* New Manga Container */
+    .containerNewManga, .containerManga{
+        margin: 20px auto;
+    }
+
     .containerAddManga, .containerEditManga{
         width: 100%;
         left: 0;
@@ -148,7 +155,26 @@
         transition: all .3s ease-out;
     }
 
+    .formNav {
+        padding-top: 40px;
+        padding-bottom: 100%;
+    }
+
     .formNavTop{
         display: none;
+    }
+
+    .containerAddManga > form > input, .containerEditManga > form > input{
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .submit {
+        font-size: 20px;
+    }
+
+    .errorMessage{
+        position: absolute;
+        top: 42.5%;
     }
   }

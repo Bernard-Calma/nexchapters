@@ -27,6 +27,7 @@ const NewManga = (props) => {
             link: '',
             currentChapter: ''
         })
+        setErrorMessage("")
         document.querySelector(".containerAddManga").style.cssText = `
         opacity: 0;
         visibility: hidden;
@@ -36,7 +37,7 @@ const NewManga = (props) => {
         document.querySelector(".containerAddManga").style.cssText = `
         opacity: 1;
         visibility: visible;
-        top: 20%;`;
+        top: 32%;`;
     }
 
     // Manga API call
