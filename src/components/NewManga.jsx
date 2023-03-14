@@ -58,6 +58,9 @@ const NewManga = (props) => {
 
     const handleChange = (event) => {
         setNewManga({...newManga, [event.target.name]: event.target.value})
+        if(event.target.name === 'image'){
+            document.querySelector('.formImageNewManga').src = event.target.value
+        }
     }
 
     const handleAddManga = () => {
@@ -69,7 +72,10 @@ const NewManga = (props) => {
             },
             body: JSON.stringify(newManga),
         }).then(res => res.json())
-        .then(() => dispatch(getMangaList()))
+        .then(() => {
+            dispatch(getMangaList())
+            hideAddForm()
+        })
     }
     return(
         <div className="containerNewManga">
