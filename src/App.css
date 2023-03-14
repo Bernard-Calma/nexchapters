@@ -2,6 +2,8 @@
   text-align: center;
   background-color: rgb(63, 63, 63);
   color: white;
+  height: 100vh;
+  overflow: auto;
 }
 
 .App-logo {
@@ -13,6 +15,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+@media screen and (max-width: 600px){
+
 }
 
 .App-header {
@@ -28,6 +34,25 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.title {
+  font-size: 46px;
+  font-family: 'Eczar', serif;
+  font-weight: bolder;
+  color: white;
+  text-shadow: 10px 0 5px black;
+  margin: 0;
+}
+
+/* Home Section */
+
+.containerHome p {
+  color: rgb(0, 217, 255);
+  font-size: 32px;
+  font-family: 'Rampart One', cursive;
+  font-weight: bolder;
+  text-shadow: 5px 0 5px rgb(0, 106, 145);
 }
 
 @keyframes App-logo-spin {
