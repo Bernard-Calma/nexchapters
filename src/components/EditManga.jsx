@@ -18,7 +18,8 @@ const EditManga = (props) => {
     }
 
     const hideEditForm = (event) => {
-        event.target.parentElement.parentElement.style.display = "none";
+        // Hide container using index for queryselectorall
+        document.querySelectorAll('.containerEditManga')[props.index].style.display = "none";
     }
 
     const handleEditSubmit = () => {
@@ -30,6 +31,14 @@ const EditManga = (props) => {
             },
             body: JSON.stringify(manga),
         }).then(res => res.json())
+        .then(() => {
+            dispatch(getMangaList())
+            hideEditForm()
+        })
+    }
+
+    const handleDeleteSubmit = () => {
+        fetch("http://localhost:8000/manga/delete/" + manga.id,{method: "DELETE"})
         .then(() => {
             dispatch(getMangaList())
             hideEditForm()
@@ -56,6 +65,7 @@ const EditManga = (props) => {
             </form>
             <div className="formNav">  
                     <a className="cancel" onClick={hideEditForm}>cancel</a>
+                    <button className="submit" onClick={handleDeleteSubmit}>Delete</button>
                     <button className="submit" onClick={handleEditSubmit}>Submit</button>
             </div>
         </div>

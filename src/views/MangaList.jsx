@@ -15,10 +15,11 @@ const MangaList = () => {
     return(
         <div className="containerMangaList">
         {
-            mangaList.map(manga => 
+            mangaList.map((manga, index) => 
                 <Manga 
                     manga = {manga}
                     key = {manga.id}
+                    index = {index}
                 />)
         }
         <NewManga 

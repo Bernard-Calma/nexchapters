@@ -19,6 +19,7 @@ const Manga = (props) => {
             <a href={props.manga.link} target="_blank" className='linkManga'>Read Here</a>
             <EditManga 
                 manga = {props.manga}
+                index = {props.index}
             />
          </div>
     )
