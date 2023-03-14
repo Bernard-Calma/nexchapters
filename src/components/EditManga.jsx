@@ -19,7 +19,10 @@ const EditManga = (props) => {
 
     const hideEditForm = (event) => {
         // Hide container using index for queryselectorall
-        document.querySelectorAll('.containerEditManga')[props.index].style.display = "none";
+        document.querySelectorAll('.containerEditManga')[props.index].style.cssText = `
+        opacity: 0;
+        visibility: hidden;
+        top: 100%;`;
     }
 
     const handleEditSubmit = () => {

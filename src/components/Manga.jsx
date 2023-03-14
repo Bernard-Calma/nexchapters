@@ -4,8 +4,10 @@ import NewManga from './NewManga'
 
 const Manga = (props) => {
     const showEdit = (event) => {
-        event.target.parentElement.lastChild.style.display = "flex"
-        // document.querySelector(".containerEditManga").style.display = "flex";
+        event.target.parentElement.lastChild.style.cssText = `
+        opacity: 1;
+        visibility: visible;
+        top: 20%;`;
     }
     const imageStandBy = (event) => {
         event.target.src = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'

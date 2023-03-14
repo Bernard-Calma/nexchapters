@@ -27,10 +27,16 @@ const NewManga = (props) => {
             link: '',
             currentChapter: ''
         })
-        document.querySelector(".containerAddManga").style.display = "none";
+        document.querySelector(".containerAddManga").style.cssText = `
+        opacity: 0;
+        visibility: hidden;
+        top: 100%;`;
     }
     const showAddForm = () => {
-        document.querySelector(".containerAddManga").style.display = "flex";
+        document.querySelector(".containerAddManga").style.cssText = `
+        opacity: 1;
+        visibility: visible;
+        top: 20%;`;
     }
 
     // Manga API call
