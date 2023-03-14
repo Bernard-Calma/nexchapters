@@ -30,7 +30,7 @@
 
 
 /* FORM */
-.containerAddManga {
+.containerAddManga, .containerEditManga {
     position: fixed;
     left: 25%;
     top: 25%;
@@ -84,12 +84,12 @@
     margin-right: 20px;
 }
 
-.containerAddManga > form {
+.containerAddManga > form, .containerEditManga > form {
     display: flex;
     flex-direction: column;    
 }
 
-.containerAddManga > form > input{
+.containerAddManga > form > input, .containerEditManga > form > input{
     width: 300px;
     font-size: 25px;
 }
@@ -100,7 +100,7 @@
     font-size: 25px;
 }
 
-.containerAddManga > form > label{
+.containerAddManga > form > label, .containerEditManga > form > label{
     width: 200px;
     margin: 10px auto;
 }
