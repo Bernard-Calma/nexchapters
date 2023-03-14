@@ -22,7 +22,7 @@ const EditManga = (props) => {
     }
 
     const handleEditSubmit = () => {
-        console.log(manga)
+        // console.log(manga)
         fetch("http://localhost:8000/manga/update",{
             method: "POST",
             headers:{
