@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { getMangaList } from "../features/manga/mangaSlice"
 
 const EditManga = (props) => {
+    const dispatch = useDispatch()
     const [manga, setNewManga] = useState(props.manga)
 
     const handleChange = (event) => {
@@ -10,19 +13,35 @@ const EditManga = (props) => {
         }
     }
 
-    // const imageStandBy = (event) => {
-    //     event.target.src = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
-    // }
-    const hideAddForm = (event) => {
+    const imageStandBy = (event) => {
+        event.target.src = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
+    }
+
+    const hideEditForm = (event) => {
         event.target.parentElement.parentElement.style.display = "none";
+    }
+
+    const handleEditSubmit = () => {
+        console.log(manga)
+        fetch("http://localhost:8000/manga/update",{
+            method: "POST",
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(manga),
+        }).then(res => res.json())
+        .then(() => {
+            dispatch(getMangaList())
+            hideEditForm()
+        })
     }
     return(
         <div className="containerEditManga">
             <div className="formNavTop">
                 <p className="addTitle">Add New</p>
-                <i className="fi fi-rr-rectangle-xmark" onClick={hideAddForm}></i>
+                <i className="fi fi-rr-rectangle-xmark" onClick={hideEditForm}></i>
             </div>
-            <img src={manga.image} alt="new manga" className="formImageNewManga"/>
+            <img src={manga.image} alt="new manga" onError={imageStandBy} className="formImageNewManga"/>
             <form>
                 {/* <label htmlFor="animeList" className="animeList">Anime List <select name="animeList">
                     {
@@ -36,8 +55,8 @@ const EditManga = (props) => {
                 <input type="number" name="currentChapter" placeholder="current chapter" onChange={handleChange} value={manga.current_chapter}/>
             </form>
             <div className="formNav">  
-                    <a className="cancel" onClick={hideAddForm}>cancel</a>
-                    <button className="submit" >Submit</button>
+                    <a className="cancel" onClick={hideEditForm}>cancel</a>
+                    <button className="submit" onClick={handleEditSubmit}>Submit</button>
             </div>
         </div>
     )
