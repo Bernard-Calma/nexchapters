@@ -13,7 +13,7 @@ const MangaList = () => {
         dispatch(getMangaList())
     },[])
     return(
-        <div className="containerMangaList">
+        <section className="containerMangaList">
         {
             mangaList.map((manga, index) => 
                 <Manga 
@@ -25,7 +25,7 @@ const MangaList = () => {
         <NewManga 
             mangaList = {mangaList}
         />
-        </div>
+        </section>
     )
 }
 

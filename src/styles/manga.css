@@ -1,3 +1,4 @@
+/* Manga Component */
 .containerManga, .containerNewManga {
     background-color: rgb(21, 22, 24);
     border-radius: 20px;
@@ -14,10 +15,21 @@
     margin: auto 20px;
 }
 
+.linkManga {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    position: absolute;
+    left: 35%;
+}
+
+.linkManga:hover {
+    font-size: 18px;
+}
+
+/* New Manga Component */
 .containerNewManga {
     display: flex;
-    background-color: black;
-    justify-content: center;
 }
 
 .btnAddNewManga {
@@ -47,7 +59,7 @@
     background-color: black;
     border-radius: 10px;
     box-shadow: 0 0 5px 1px rgb(255, 255, 255);
-    font-size: 30px;
+    font-size: 25px;
     opacity: 0;
     z-index: 1;
 }
@@ -68,34 +80,27 @@
     border-bottom: solid white;
 }
 
-.addTitle{
+.addTitle, .fi-rr-rectangle-xmark, .submit{
     margin: 0 20px;
-}
-
-.fi-rr-rectangle-xmark{
-    margin: auto 20px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .cancel {
     text-decoration: underline;
     color: red;
-    font-size: 20px;
     margin-left: 10px;
 }
 
 .submit {
     border-radius: 10px;
-    font-size: 25px;
-    margin-right: 20px;
 }
 
-.containerAddManga > form, .containerEditManga > form {
+.containerAddManga form, .containerEditManga form {
     display: flex;
     flex-direction: column;    
 }
 
-.containerAddManga > form > input, .containerEditManga > form > input{
+.containerAddManga input, .containerEditManga input{
     width: 300px;
     font-size: 25px;
 }
@@ -103,30 +108,12 @@
 .animeList > select{
     width: 200px;
     display: flex;
-    font-size: 25px;
-}
-
-.containerAddManga > form > label, .containerEditManga > form > label{
-    width: 200px;
-    margin: 10px auto;
 }
 
 .formImageNewManga {
     width: 200px;
     height: 200px;
     margin: 20px;
-}
-
-.linkManga {
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    position: absolute;
-    left: 35%;
-}
-
-.linkManga:hover {
-    font-size: 18px;
 }
 
 .errorMessage{

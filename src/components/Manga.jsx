@@ -14,9 +14,9 @@ const Manga = (props) => {
     }
     return(
         <div className="containerManga">
-            <img src={props.manga.image} alt={props.manga.title} className="manga imgManga" onClick={showEdit} onError={imageStandBy}/>
-            <h2 className="manga titleManga">Title: {props.manga.title}</h2>
-            <h2 className="manga currentChaptersManga">Your Current Chapter: {props.manga.current_chapter}</h2>
+            <img src={props.manga.image} alt={props.manga.title} className="imgManga" onClick={showEdit} onError={imageStandBy}/>
+            <h2 className="titleManga">Title: {props.manga.title}</h2>
+            <h2 className="currentChaptersManga">Your Current Chapter: {props.manga.current_chapter}</h2>
             {/* <h2 className="manga totalChaptersManga">Total Chapters: {props.manga.total_chapters}</h2> */}
             <a href={props.manga.link} target="_blank" className='linkManga'>Read Here</a>
             <EditManga 
