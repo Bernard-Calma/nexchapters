@@ -4,12 +4,14 @@ import '../styles/header.css'
 
 const Header = () => {
     return (
-        <div className="containerHeader">
+        <header className="containerHeader">
             <Link to="/"><img className="headerLogo" src={logo} alt="logo" /></Link>
             <div className="headerLoginRegister">
-                <Link to="login" className="linkHeader">Login</Link> or <Link to="register" className="linkHeader">Register</Link>
+                <Link to="login" className="linkHeader">Login</Link> 
+                <span> or </span>  
+                <Link to="register" className="linkHeader">Register</Link>
             </div>
-        </div>
+        </header>
     )
 }
 

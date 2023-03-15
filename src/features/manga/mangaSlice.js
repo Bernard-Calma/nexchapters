@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
     mangaList: [],
@@ -7,8 +8,10 @@ const initialState = {
 }
 
 export const getMangaList = createAsyncThunk('manga/getMangaList', () =>{
-    return fetch("http://localhost:8000/manga/")
-    .then(res => res.json())
+    return axios.get("http://192.168.1.80:8000/manga/")
+    .then(res => {
+        console.log(res)
+        return res.data})
 })
 
 const mangaSlice = createSlice({

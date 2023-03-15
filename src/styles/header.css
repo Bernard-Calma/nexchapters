@@ -1,40 +1,34 @@
+/* Header */
+
 .containerHeader{
     width: 100%;
     background-color: black;
     text-align: start;
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 1px 1px 5px 3px gray;
-}
-
-.containerHeader > p {
-    display: inline-block;
-    width: 10px;
-    margin: 0;
+    /* LOGIN REGISTER STYLE */
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 .headerLogo {
     width: 400px;
-    height: 70px;
 }
 
 .headerLoginRegister {
     background-color: rgb(54, 53, 53);
-    color: white;
     width: 200px;
     text-align: center;
     border-radius: 10px;
-    padding: 0 10px;
+    margin-right: 10px;
 }
-
 
 .linkHeader{
     text-decoration: none;
     color: rgb(172, 217, 243);
-    font-size: 20px;
-    font-weight: bolder;
 }
 
 .linkHeader:hover{

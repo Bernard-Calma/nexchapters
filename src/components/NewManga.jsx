@@ -78,19 +78,24 @@ const NewManga = (props) => {
                 return
             }
         }
-        // console.log(newManga)
-        fetch("http://localhost:8000/manga/add",{
+        setErrorMessage('adding.....')
+        fetch("http://192.168.1.80:8000/manga/add",{
             method: "POST",
             headers:{
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(newManga),
         }).then(res => res.json())
         .then(() => {
+            setErrorMessage('add')
             dispatch(getMangaList())
             hideAddForm()
             setErrorMessage('')
-        })
+        }).catch((error) => {
+            console.log(error.name)
+            setErrorMessage(error.message)}
+            )
+        setErrorMessage("done")
     }
     return(
         <div className="containerNewManga">
@@ -116,7 +121,7 @@ const NewManga = (props) => {
                 <p className="errorMessage">{errorMessage}</p>
                 <div className="formNav">  
                         <a className="cancel" onClick={hideAddForm}>cancel</a>
-                        <button className="submit" onClick={handleAddManga}>Submit</button>
+                        <button className="submit" onTouchStart={handleAddManga}>Submit</button>
                 </div>
             </div>
         </div>
