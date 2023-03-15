@@ -1,7 +1,12 @@
 const Login = () => {
     return(
         <div className="containerLogin">
-            <h1>Login</h1>
+            <h1 className="title">Login</h1>
+            <form>  
+                <input type="text" placeholder="username" />
+                <input type="text" placeholder="pasword" />
+                <button>Login</button>
+            </form>
         </div>
     )
 }
