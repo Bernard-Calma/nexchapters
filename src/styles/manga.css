@@ -7,6 +7,7 @@
     font-family: 'space mono';
     margin: 20px 10px;
     position: relative;
+    width: 300px;
 }
 
 .imgManga, .containerNewManga{
@@ -25,6 +26,13 @@
 
 .linkManga:hover {
     font-size: 18px;
+}
+
+.titleManga {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 }
 
 /* New Manga Component */
