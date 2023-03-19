@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getMangaList } from "../features/manga/mangaSlice"
 import Manga from "../components/Manga"
@@ -6,9 +6,8 @@ import NewManga from "../components/NewManga";
 import '../styles/mangaList.css'
 
 const MangaList = () => {
-    // console.log(useSelector((store)=>console.log(store)))
     const dispatch = useDispatch(); 
-    const {mangaList} = useSelector((store) => store.manga)
+    const {mangaList, serverURL} = useSelector((store) => store.manga)
     useEffect(()=>{
         dispatch(getMangaList())
     },[])
@@ -20,10 +19,12 @@ const MangaList = () => {
                     manga = {manga}
                     key = {manga.id}
                     index = {index}
+                    serverURL = {serverURL}
                 />)
         }
         <NewManga 
             mangaList = {mangaList}
+            serverURL = {serverURL}
         />
         </section>
     )

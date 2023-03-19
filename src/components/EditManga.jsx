@@ -27,7 +27,7 @@ const EditManga = (props) => {
 
     const handleEditSubmit = () => {
         // console.log(manga)
-        fetch("http://localhost:8000/manga/update",{
+        fetch("http://127.0.0.1:8000/manga/update",{
             method: "POST",
             headers:{
                 'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ const EditManga = (props) => {
     }
 
     const handleDeleteSubmit = () => {
-        fetch("http://localhost:8000/manga/delete/" + manga.id,{method: "DELETE"})
+        fetch("http://127.0.0.1:8000/manga/delete/" + manga.id,{method: "DELETE"})
         .then(() => {
             dispatch(getMangaList())
             hideEditForm()
@@ -67,7 +67,7 @@ const EditManga = (props) => {
                 <input type="number" name="currentChapter" placeholder="current chapter" onChange={handleChange} value={manga.current_chapter}/>
             </form>
             <div className="formNav">  
-                    <a className="cancel" onClick={hideEditForm}>cancel</a>
+                    <span className="cancel" onClick={hideEditForm}>cancel</span>
                     <button className="submit" onClick={handleDeleteSubmit}>Delete</button>
                     <button className="submit" onClick={handleEditSubmit}>Submit</button>
             </div>

@@ -1,6 +1,5 @@
 import '../styles/manga.css'
 import EditManga from './EditManga'
-import NewManga from './NewManga'
 
 const Manga = (props) => {
     const showEdit = (event) => {
@@ -18,7 +17,7 @@ const Manga = (props) => {
             <h2 className="titleManga">Title: {props.manga.title}</h2>
             <h2 className="currentChaptersManga">Your Current Chapter: {props.manga.current_chapter}</h2>
             {/* <h2 className="manga totalChaptersManga">Total Chapters: {props.manga.total_chapters}</h2> */}
-            <a href={props.manga.link} target="_blank" className='linkManga'>Read Here</a>
+            <a href={props.manga.link} target="_blank" rel='noreferrer' className='linkManga'>Read Here</a>
             <EditManga 
                 manga = {props.manga}
                 index = {props.index}

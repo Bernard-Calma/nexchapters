@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { getMangaList } from "../features/manga/mangaSlice"
 
@@ -79,7 +79,7 @@ const NewManga = (props) => {
             }
         }
         setErrorMessage('adding.....')
-        fetch("http://192.168.1.80:8000/manga/add",{
+        fetch("http://127.0.0.1:8000/manga/add",{
             method: "POST",
             headers:{
                 'Content-Type': 'application/json',
@@ -120,8 +120,8 @@ const NewManga = (props) => {
                 </form>
                 <p className="errorMessage">{errorMessage}</p>
                 <div className="formNav">  
-                        <a className="cancel" onClick={hideAddForm}>cancel</a>
-                        <button className="submit" onTouchStart={handleAddManga}>Submit</button>
+                        <span className="cancel" onClick={hideAddForm}>cancel</span>
+                        <button className="submit" onClick={handleAddManga}>Submit</button>
                 </div>
             </div>
         </div>

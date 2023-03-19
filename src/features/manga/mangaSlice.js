@@ -1,16 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+
 const initialState = {
     mangaList: [],
+    serverURL: process.env.REACT_APP_SERVER_URL,
     loading: false,
     error: "",
 }
 
 export const getMangaList = createAsyncThunk('manga/getMangaList', () =>{
-    return axios.get("http://192.168.1.80:8000/manga/")
+    return axios.get("http://localhost:8000/manga/")
     .then(res => {
-        console.log(res)
         return res.data})
 })
 
