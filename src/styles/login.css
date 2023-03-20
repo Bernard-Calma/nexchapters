@@ -1,0 +1,49 @@
+.formRegister {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 50px auto;
+}
+
+.input {
+    width: 300px;
+    font-size: 30px;
+    margin: 10px;
+    text-indent: 10px;
+    font-family: 'Space Mono';
+    border-radius: 10px;
+}
+
+.formButtom {
+    font-family: 'Rampart One';
+    font-size: 40px;
+    color: black;
+    background-color: white;
+    text-shadow: 1px 1px 5px rgb(0, 2, 3); 
+    border: gray 2px solid; 
+}
+
+.formButtom:hover{
+    box-shadow: 0 0 5px 1px white;
+    cursor: pointer;
+}
+
+.buttonLogin{
+    font-size: 46px;
+    font-family: 'Eczar', serif;
+    font-weight: bolder;
+    color: rgb(172, 217, 243);
+    text-shadow: 10px 0 5px black;
+    margin: 0;
+
+    background-color: gray;
+    padding: 0 15px 0 10px;
+    border: white 2px solid;
+    border-radius: 5px;
+}
+
+.buttonLogin:hover{
+    box-shadow: 0 0 5px 1px white;
+    cursor: pointer;
+}

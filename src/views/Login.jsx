@@ -1,11 +1,12 @@
+import '../styles/login.css'
+
 const Login = () => {
     return(
         <div className="containerLogin">
-            <h1 className="title">Login</h1>
-            <form>  
-                <input type="text" placeholder="username" />
-                <input type="text" placeholder="pasword" />
-                <button>Login</button>
+            <form className='formRegister'>  
+                <input type="text" placeholder="username" className='input'/>
+                <input type="password" placeholder="pasword" className='input'/>
+                <h1 className="buttonLogin">Login</h1>
             </form>
         </div>
     )

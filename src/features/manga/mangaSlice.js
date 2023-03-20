@@ -10,7 +10,7 @@ const initialState = {
 }
 
 export const getMangaList = createAsyncThunk('manga/getMangaList', () =>{
-    return axios.get("http://localhost:8000/manga/")
+    return axios.get(`${initialState.serverURL}/manga/`)
     .then(res => {
         return res.data})
 })
