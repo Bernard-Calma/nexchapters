@@ -34,7 +34,7 @@ const Login = () => {
                 <form className='formRegister'>  
                     <input type="text" placeholder="username" className='input' name='username' onChange={handleChange}/>
                     <input type="password" placeholder="pasword" className='input' name='password' onChange={handleChange}/>
-                    <h1 className="buttonLogin" onClick={handleLogin}>Login</h1>
+                    <h1 className="buttonLogin" onTouchStart={handleLogin}>Login</h1>
                 </form>
             </div>
 

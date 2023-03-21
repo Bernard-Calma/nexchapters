@@ -26,6 +26,7 @@ const userSlice = createSlice({
         })
         builder.addCase(login.fulfilled, (state, action) => {
             state.loading = false
+            // Added if statement to not do anything if login failed
             state.user = action.payload.data ? action.payload.data : 
             state.error = action.payload.status.message
         })
