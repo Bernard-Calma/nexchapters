@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
+// User State
 const initialState = {
     mangaList: [],
     serverURL: process.env.REACT_APP_SERVER_URL,
@@ -9,8 +9,8 @@ const initialState = {
     error: "",
 }
 
-export const getMangaList = createAsyncThunk('manga/getMangaList', () =>{
-    return axios.get(`${initialState.serverURL}/manga/`)
+export const getMangaList = createAsyncThunk('manga/getMangaList', (id) =>{
+    return axios.get(`${initialState.serverURL}/manga/${id}`)
     .then(res => {
         return res.data})
 })
