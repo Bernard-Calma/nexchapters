@@ -31,10 +31,10 @@ const Login = () => {
             })
             :
             <div className="containerLogin">
-                <form className='formRegister'>  
+                <form className='formRegister' onSubmit={() => handleLogin}>  
                     <input type="text" placeholder="username" className='input' name='username' onChange={handleChange}/>
                     <input type="password" placeholder="pasword" className='input' name='password' onChange={handleChange}/>
-                    <h1 className="buttonLogin" onTouchStart={handleLogin}>Login</h1>
+                    <button className="buttonLogin" onClick={handleLogin}>Login</button>
                 </form>
             </div>
 

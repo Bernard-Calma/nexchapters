@@ -47,3 +47,9 @@
     box-shadow: 0 0 5px 1px white;
     cursor: pointer;
 }
+
+@media screen and (max-width: 900px) {
+    .formRegister {
+        width: 300px;
+    }
+}
