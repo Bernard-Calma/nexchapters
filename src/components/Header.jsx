@@ -9,7 +9,7 @@ const Header = () => {
         <header className="containerHeader">
             <Link to="/"><img className="headerLogo" src={logo} alt="logo" /></Link>
             {
-                !user.userID ? 
+                !user.id ? 
                 <div className="headerLoginRegister">
                     <Link 
                         to="login" 

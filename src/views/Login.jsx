@@ -24,7 +24,7 @@ const Login = () => {
     }
     return(<>
         {
-            user.userID ? 
+            user.id ? 
                 navigate("/mangalist") 
             :
             <div className="containerLogin">

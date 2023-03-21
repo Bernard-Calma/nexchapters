@@ -10,7 +10,7 @@ const MangaList = () => {
     const {mangaList, serverURL} = useSelector(store => store.manga)
     const {user} = useSelector(store => store.user)
     useEffect(()=>{
-        dispatch(getMangaList(user.userID))
+        dispatch(getMangaList(user.id))
     },[])
     return(
         <section className="containerMangaList">

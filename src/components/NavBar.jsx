@@ -10,7 +10,7 @@ const NavBar = () => {
                     <Link to="home" className="linkNavBar">Home</Link>
                 </div>
                 {
-                    user.userID
+                    user.id
                     ? <div className="containerLink">
                         <Link to="mangalist" className="linkNavBar">Manga List</Link>
                     </div>
