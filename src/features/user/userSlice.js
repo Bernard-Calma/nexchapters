@@ -26,12 +26,14 @@ const userSlice = createSlice({
         })
         builder.addCase(login.fulfilled, (state, action) => {
             state.loading = false
-            state.user = action.payload.data
+            state.user = action.payload.data ? action.payload.data : 
             state.error = action.payload.status.message
         })
-        builder.addCase(login.rejected, (state, action) => {            state.loading = false
-            state.getUser = {
-                userID: "",
+        builder.addCase(login.rejected, (state, action) => {
+            console.log("failed to login")
+            state.loading = false
+            state.user = {
+                id: "",
                 username: ""
             }
             state.error = action.error.message

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { getMangaList } from "../features/manga/mangaSlice"
 
 // FUTURE PLAN: Auto populate manga when entering title
-const NewManga = (props) => {
+const NewManga = () => {
     const dispatch = useDispatch()
     const [newManga, setNewManga] = useState({
         title: '',
