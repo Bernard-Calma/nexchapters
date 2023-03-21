@@ -29,6 +29,7 @@ const userSlice = createSlice({
             // Added if statement to not do anything if login failed
             state.user = action.payload.data ? action.payload.data : 
             state.error = action.payload.status.message
+            console.log("Login Success")
         })
         builder.addCase(login.rejected, (state, action) => {
             console.log("failed to login")
