@@ -7,9 +7,10 @@ import '../styles/mangaList.css'
 
 const MangaList = () => {
     const dispatch = useDispatch(); 
-    const {mangaList, serverURL} = useSelector((store) => store.manga)
+    const {mangaList, serverURL} = useSelector(store => store.manga)
+    const {user} = useSelector(store => store.user)
     useEffect(()=>{
-        dispatch(getMangaList())
+        dispatch(getMangaList(user.userID))
     },[])
     return(
         <section className="containerMangaList">

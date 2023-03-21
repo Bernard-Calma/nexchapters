@@ -9,10 +9,9 @@ const initialState = {
     error: "",
 }
 
-export const getMangaList = createAsyncThunk('manga/getMangaList', (id) =>{
-    return axios.get(`${initialState.serverURL}/manga/${id}`)
-    .then(res => {
-        return res.data})
+export const getMangaList = createAsyncThunk('manga/getMangaList', (userID) =>{
+    return axios.get(`${initialState.serverURL}/manga/${userID}`)
+    .then(res => res.data)
 })
 
 const mangaSlice = createSlice({
