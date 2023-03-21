@@ -25,7 +25,9 @@ const Login = () => {
     return(<>
         {
             user.id ? 
-                navigate("/mangalist") 
+                setTimeout(() => {
+                    navigate("/mangalist") 
+                })
             :
             <div className="containerLogin">
                 <form className='formRegister'>  
