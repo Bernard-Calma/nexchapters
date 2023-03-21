@@ -25,7 +25,6 @@ const userSlice = createSlice({
             state.loading = true
         })
         builder.addCase(login.fulfilled, (state, action) => {
-            console.log(action)
             state.loading = false
             state.user = action.payload.data
             state.error = action.payload.status.message

@@ -11,7 +11,10 @@ const Header = () => {
             {
                 !user.userID ? 
                 <div className="headerLoginRegister">
-                    <Link to="login" className="linkHeader">Login</Link> 
+                    <Link 
+                        to="login" 
+                        className="linkHeader"
+                    >Login</Link> 
                     <span> or </span>  
                     <Link to="register" className="linkHeader">Register</Link>
                 </div>
