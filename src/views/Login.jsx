@@ -25,9 +25,10 @@ const Login = () => {
     return(<>
         {
             user.id ? 
-                setTimeout(() => {
-                    navigate("/mangalist") 
-                })
+            // setTimeout added to delay rendering
+            setTimeout(() => {
+                navigate("/mangalist") 
+            })
             :
             <div className="containerLogin">
                 <form className='formRegister'>  
