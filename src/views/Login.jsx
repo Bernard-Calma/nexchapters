@@ -31,7 +31,7 @@ const Login = () => {
             })
             :
             <div className="containerLogin">
-                <form className='formRegister'>  
+                <form className='formRegister' method='POST'>  
                     <input type="text" placeholder="username" className='input' name='username' onChange={handleChange}/>
                     <input type="password" placeholder="pasword" className='input' name='password' onChange={handleChange}/>
                     <a className="buttonLogin" onClick={handleLogin}>Login</a>
