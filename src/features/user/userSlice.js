@@ -13,7 +13,12 @@ const initialState = {
 }
 
 export const login = createAsyncThunk('user', (body) =>{
-    return axios.post(`${initialState.serverURL}/user/`, body)
+    return axios.post(`${initialState.serverURL}/user/`, body,
+    {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
     .then(res => res.data)
 })
 

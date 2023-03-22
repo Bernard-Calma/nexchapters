@@ -2,19 +2,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../features/user/userSlice';
 import { useState } from 'react';
 import '../styles/login.css'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 
 
 const Login = () => {
+    const [user, userLogin, error, setUserLogin] = useOutletContext();
     const dispatch = useDispatch();
+    
     let navigate = useNavigate()
-    const [userLogin, setUserLogin] = useState({
-        username: "",
-        password: ""
-    })
-    const {user, error} = useSelector(store => store.user)
-
-    console.log(useSelector(store => store.user))
     const handleChange = (e) => {
         e.preventDefault()
         setUserLogin({...userLogin, [e.target.name]: e.target.value})
@@ -40,8 +35,7 @@ const Login = () => {
             </div>
 
         }
-    </>
-        
+    </>     
     )
 }
 
