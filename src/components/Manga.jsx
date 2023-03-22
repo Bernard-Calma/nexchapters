@@ -21,6 +21,7 @@ const Manga = (props) => {
             <EditManga 
                 manga = {props.manga}
                 index = {props.index}
+                serverURL = {props.serverURL}
             />
          </div>
     )

@@ -26,6 +26,7 @@ const MangaList = () => {
         <NewManga 
             mangaList = {mangaList}
             serverURL = {serverURL}
+            user = {user}
         />
         </section>
     )

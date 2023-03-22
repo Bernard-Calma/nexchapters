@@ -16,6 +16,7 @@ const Login = () => {
 
 
     const handleChange = (e) => {
+        e.preventDefault()
         setUserLogin({...userLogin, [e.target.name]: e.target.value})
     }
 

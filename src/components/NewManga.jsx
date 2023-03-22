@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { getMangaList } from "../features/manga/mangaSlice"
+import axios from "axios";
 
 // FUTURE PLAN: Auto populate manga when entering title
-const NewManga = () => {
+const NewManga = (props) => {
     const dispatch = useDispatch()
     const [newManga, setNewManga] = useState({
         title: '',
@@ -11,6 +12,7 @@ const NewManga = () => {
         link: '',
         // totalChapters: null,
         currentChapter: "",
+        userID: props.user.id
     })
     let [errorMessage, setErrorMessage] = useState('')
 
@@ -72,6 +74,7 @@ const NewManga = () => {
     }
 
     const handleAddManga = () => {
+        console.log(newManga)
         for (const [key, value] of Object.entries(newManga)) {
             if (value === "") {
                 setErrorMessage("All fields should not be empty.")
@@ -79,13 +82,7 @@ const NewManga = () => {
             }
         }
         setErrorMessage('adding.....')
-        fetch("http://127.0.0.1:8000/manga/add",{
-            method: "POST",
-            headers:{
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newManga),
-        }).then(res => res.json())
+        axios.post("http://127.0.0.1:8000/manga/add",newManga).then(res => res.json())
         .then(() => {
             setErrorMessage('add')
             dispatch(getMangaList())

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { getMangaList } from "../features/manga/mangaSlice"
+import axios from "axios"
 
 const EditManga = (props) => {
     const dispatch = useDispatch()
@@ -27,15 +28,10 @@ const EditManga = (props) => {
 
     const handleEditSubmit = () => {
         // console.log(manga)
-        fetch("http://127.0.0.1:8000/manga/update",{
-            method: "POST",
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(manga),
-        }).then(res => res.json())
+        axios.post(`${props.serverURL}/manga/update/${manga.id}`,manga)
+        .then(res => res.data)
         .then(() => {
-            dispatch(getMangaList())
+            dispatch(getMangaList(manga.user_id))
             hideEditForm()
         })
     }
@@ -64,7 +60,7 @@ const EditManga = (props) => {
                 <input type="text" name="image" placeholder="image link" onChange={handleChange} value={manga.image}/>
                 <input type="text" name="link" placeholder="webiste link" onChange={handleChange} value={manga.link}/>
                 {/* <input type="number" name="totalChapters" placeholder="total chapters"/> */}
-                <input type="number" name="currentChapter" placeholder="current chapter" onChange={handleChange} value={manga.current_chapter}/>
+                <input type="number" name="current_chapter" placeholder="current chapter" onChange={handleChange} value={manga.current_chapter}/>
             </form>
             <div className="formNav">  
                     <span className="cancel" onClick={hideEditForm}>cancel</span>
