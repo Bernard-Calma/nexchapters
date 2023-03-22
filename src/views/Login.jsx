@@ -6,14 +6,10 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 
 
 const Login = () => {
-    const [user, userLogin, error, setUserLogin] = useOutletContext();
+    const [user, userLogin, error, handleChange] = useOutletContext();
     const dispatch = useDispatch();
-    
+
     let navigate = useNavigate()
-    const handleChange = (e) => {
-        e.preventDefault()
-        setUserLogin({...userLogin, [e.target.name]: e.target.value})
-    }
     const handleLogin = () => {
         dispatch(login(userLogin))
     }
