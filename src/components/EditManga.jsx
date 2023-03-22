@@ -37,9 +37,9 @@ const EditManga = (props) => {
     }
 
     const handleDeleteSubmit = () => {
-        fetch("http://127.0.0.1:8000/manga/delete/" + manga.id,{method: "DELETE"})
+        axios.delete(`${props.serverURL}/manga/delete/${manga.id}`)
         .then(() => {
-            dispatch(getMangaList())
+            dispatch(getMangaList(manga.user_id))
             hideEditForm()
         })
     }
