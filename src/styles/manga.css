@@ -8,7 +8,10 @@
     margin: 20px 10px;
     position: relative;
     width: 250px;
+    color: rgb(172, 217, 243);
+    box-shadow: 0 0 5px 2px white;
 }
+
 
 .imgManga, .containerNewManga{
     width: 150px;
@@ -17,11 +20,11 @@
 }
 
 .linkManga {
-    color: white;
     font-size: 16px;
     text-decoration: none;
     position: absolute;
     left: 35%;
+    color: white
 }
 
 .linkManga:hover {
@@ -32,7 +35,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
 }
 
 /* New Manga Component */
@@ -43,13 +45,14 @@
 .btnAddNewManga {
     font-size: 50px;
     margin: auto;
+    color: white;
 }
 
 .btnAddNewManga:hover{
     font-size: 70px;
 }
 
-.btnAddNewManga:hover, .fi:hover, .cancel:hover, .submit:hover{
+.btnAddNewManga:hover, .fi:hover, .cancel:hover, .submit:hover, .imgManga{
     cursor: pointer;
 }
 

@@ -7,7 +7,7 @@ const Header = () => {
     const {user} = useSelector(store => store.user)
     return (
         <header className="containerHeader">
-            <Link to="/"><img className="headerLogo" src={logo} alt="logo" /></Link>
+            <Link to="/home"><img className="headerLogo" src={logo} alt="logo" /></Link>
             {
                 !user.id ? 
                 <div className="headerLoginRegister">
