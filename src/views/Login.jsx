@@ -12,14 +12,13 @@ const Login = () => {
         username: "",
         password: ""
     })
-    const {user} = useSelector(store => store.user)
+    const {user, error} = useSelector(store => store.user)
 
-
+    console.log(useSelector(store => store.user))
     const handleChange = (e) => {
         e.preventDefault()
         setUserLogin({...userLogin, [e.target.name]: e.target.value})
     }
-
     const handleLogin = () => {
         dispatch(login(userLogin))
     }
@@ -35,6 +34,7 @@ const Login = () => {
                 <form className='formRegister' method='POST'>  
                     <input type="text" placeholder="username" className='input' name='username' onChange={handleChange}/>
                     <input type="password" placeholder="pasword" className='input' name='password' onChange={handleChange}/>
+                    <p className='loginError'>{error}</p>
                     <a className="buttonLogin" onClick={handleLogin}>Login</a>
                 </form>
             </div>

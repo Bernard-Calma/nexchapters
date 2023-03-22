@@ -48,6 +48,11 @@
     cursor: pointer;
 }
 
+.loginError {
+    color: red;
+    font-size: 24px;
+}
+
 @media screen and (max-width: 900px) {
     .formRegister {
         width: 300px;

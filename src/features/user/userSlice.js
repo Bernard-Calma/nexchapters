@@ -12,7 +12,7 @@ const initialState = {
     error: "",
 }
 
-export const login = createAsyncThunk('user', async(body) =>{
+export const login = createAsyncThunk('user', (body) =>{
     return axios.post(`${initialState.serverURL}/user/`, body)
     .then(res => res.data)
 })
@@ -27,12 +27,10 @@ const userSlice = createSlice({
         builder.addCase(login.fulfilled, (state, action) => {
             state.loading = false
             // Added if statement to not do anything if login failed
-            state.user = action.payload.data ? action.payload.data : 
+            state.user = action.payload.data ? action.payload.data : state.user
             state.error = action.payload.status.message
-            console.log("Login Success")
         })
         builder.addCase(login.rejected, (state, action) => {
-            console.log("failed to login")
             state.loading = false
             state.user = {
                 id: "",
