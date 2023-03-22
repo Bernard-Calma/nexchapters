@@ -35,6 +35,13 @@
     color: rgb(92, 119, 136);
 }
 
+/* Logged In */
+.username {
+    color: rgb(172, 217, 243);
+    font-size: 24px;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 600px){
     .headerLogo {
       width: 200px;
