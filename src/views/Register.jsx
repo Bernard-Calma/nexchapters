@@ -6,7 +6,6 @@ const Register = () => {
     const [user, userLogin, error, handleChange] = useOutletContext();
     let navigate = useNavigate()
     const dispatch = useDispatch()
-    console.log(userLogin)
     const handleRegister = (event) => {
         event.preventDefault()
         dispatch(register(userLogin))
