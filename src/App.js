@@ -9,12 +9,14 @@ import NavBar from './components/NavBar';
 
 const App = () => {
   const [userLogin, setUserLogin] = useState()
-  const {user, error} = useSelector(store => store.user)
+  let {user, error} = useSelector(store => store.user)
 
   const handleChange = (e) => {
+    // Handle changes of inputs and state
     e.preventDefault()
     setUserLogin({...userLogin, [e.target.name]: e.target.value})
-}
+  }
+
   return(
     <div className='App'>
       <Header />

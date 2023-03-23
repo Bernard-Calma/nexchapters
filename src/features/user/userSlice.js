@@ -22,10 +22,16 @@ export const login = createAsyncThunk('user', (body) =>{
     .then(res => res.data)
 })
 
+export const register = createAsyncThunk('user', (body) => {
+    return axios.post(`${initialState.serverURL}/user/register`, body)
+    .then(res => res.data)
+})
+
 const userSlice = createSlice({
     name: "user",
     initialState,
     extraReducers: (builder) => {
+        // LOGIN REDUCERS
         builder.addCase(login.pending, (state) => {
             state.loading = true
         })
