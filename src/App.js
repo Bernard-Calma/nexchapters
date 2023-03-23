@@ -13,7 +13,6 @@ const App = () => {
 
   const handleChange = (e) => {
     // Handle changes of inputs and state
-    e.preventDefault()
     setUserLogin({...userLogin, [e.target.name]: e.target.value})
   }
 

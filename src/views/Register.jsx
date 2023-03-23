@@ -6,6 +6,11 @@ const Register = () => {
     const [user, userLogin, error, handleChange] = useOutletContext();
     let navigate = useNavigate()
     const dispatch = useDispatch()
+    console.log(userLogin)
+    const handleRegister = (event) => {
+        event.preventDefault()
+        dispatch(register(userLogin))
+    }
     return(<>
         {
             user.id 
@@ -14,12 +19,14 @@ const Register = () => {
                     navigate("/mangalist") 
                 })
             : 
-                <div className="containerLogin">
-                    <form className='formRegister' method='POST'>  
-                        <input type="text" placeholder="username" className='input' name='username' onChange={handleChange}/>
-                        <input type="password" placeholder="pasword" className='input' name='password' onChange={handleChange}/>
+                <div className="containerLogin"  onSubmit={handleRegister}>
+                    <form className='formRegister' method="POST" action="">  
+                        <input type="text" placeholder="username" className='input' name='username' onChange={handleChange} required/>
+                        <input type="email" placeholder="email" className='input' name='email' onChange={handleChange} required/>
+                        <input type="password" placeholder="pasword" className='input' name='password' onChange={handleChange} required/>
+                        <input type="password" placeholder="re-enter password" className='input' name='verifyPassword' onChange={handleChange} required/>
                         <p className='loginError'>{error}</p>
-                        <a className="buttonLogin" onClick={() => dispatch(register(userLogin))}>Register</a>
+                        <input type="submit" value="Register" className="buttonLogin"/>
                     </form>
                 </div>
         }

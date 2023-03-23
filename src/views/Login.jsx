@@ -23,11 +23,11 @@ const Login = () => {
                 })
             : 
                 <div className="containerLogin">
-                    <form className='formRegister'>  
+                    <form className='formRegister' onSubmit={handleLogin}>  
                         <input type="text" placeholder="username" className='input' name='username' onChange={handleChange} required />
                         <input type="password" placeholder="pasword" className='input' name='password' onChange={handleChange} required />
                         <p className='loginError'>{error}</p>
-                        <input type="submit" className="buttonLogin" onClick={handleLogin} value="Login"/>
+                        <input type="submit" className="buttonLogin"  value="Login"/>
                     </form>
                 </div>
         }
