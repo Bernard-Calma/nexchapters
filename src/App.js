@@ -20,6 +20,7 @@ const App = () => {
     <div className='App'>
       <Header />
       <NavBar 
+        
       />
       <Outlet 
         context={[

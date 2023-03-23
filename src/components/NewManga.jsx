@@ -27,7 +27,7 @@ const NewManga = (props) => {
             title: '',
             image: '',
             link: '',
-            currentChapter: ''
+            currentChapter: '',
         })
         setErrorMessage("")
         document.querySelector(".containerAddManga").style.cssText = `
@@ -81,18 +81,16 @@ const NewManga = (props) => {
                 return
             }
         }
-        setErrorMessage('adding.....')
-        axios.post("http://127.0.0.1:8000/manga/add",newManga).then(res => res.json())
+        axios.post(`${props.serverURL}/manga/add`,newManga).then(res => res.data)
         .then(() => {
             setErrorMessage('add')
-            dispatch(getMangaList())
+            dispatch(getMangaList(newManga.userID))
             hideAddForm()
             setErrorMessage('')
         }).catch((error) => {
             console.log(error.name)
             setErrorMessage(error.message)}
             )
-        setErrorMessage("done")
     }
     return(
         <div className="containerNewManga">
