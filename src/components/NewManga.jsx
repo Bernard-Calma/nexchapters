@@ -23,7 +23,7 @@ const NewManga = (props) => {
         event.target.src = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
     }
     const hideAddForm = () => {
-        setNewManga({
+        setNewManga({...newManga, 
             title: '',
             image: '',
             link: '',
@@ -101,23 +101,24 @@ const NewManga = (props) => {
                     <i className="fi fi-rr-rectangle-xmark" onClick={hideAddForm}></i>
                 </div>
                 <img src="" alt="new manga" onError={imageStandBy} className="formImageNewManga"/>
-                <form>
+                <form onSubmit={handleAddManga}>
                     {/* <label htmlFor="animeList" className="animeList">Anime List <select name="animeList">
                         {
                             mangaList.map(manga => <option value={manga.title}>{manga.title}</option>)
                         }
                     </select></label> */}
-                    <input type="text" name="title" placeholder="title" onChange={handleChange} value={newManga.title}/>
-                    <input type="text" name="image" placeholder="image link" onChange={handleChange} value={newManga.image}/>
-                    <input type="text" name="link" placeholder="webiste link" onChange={handleChange} value={newManga.link}/>
+                    <input type="text" name="title" placeholder="title" onChange={handleChange} value={newManga.title} required/>
+                    <input type="text" name="image" placeholder="image link" onChange={handleChange} value={newManga.image} required/>
+                    <input type="text" name="link" placeholder="webiste link" onChange={handleChange} value={newManga.link} required/>
                     {/* <input type="number" name="totalChapters" placeholder="total chapters"/> */}
-                    <input type="number" name="currentChapter" placeholder="current chapter" onChange={handleChange} value={newManga.currentChapter}/>
+                    <input type="number" name="currentChapter" placeholder="current chapter" onChange={handleChange} value={newManga.currentChapter} required/>
+                    <p className="errorMessage">{errorMessage}</p>
+                    <div className="formNav">  
+                            <span className="cancel" onClick={hideAddForm}>cancel</span>
+                            <button className="submit" >Submit</button>
+                    </div>
                 </form>
-                <p className="errorMessage">{errorMessage}</p>
-                <div className="formNav">  
-                        <span className="cancel" onClick={hideAddForm}>cancel</span>
-                        <button className="submit" onClick={handleAddManga}>Submit</button>
-                </div>
+
             </div>
         </div>
     )
