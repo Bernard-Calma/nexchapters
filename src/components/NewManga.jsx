@@ -73,14 +73,9 @@ const NewManga = (props) => {
         }
     }
 
-    const handleAddManga = () => {
+    const handleAddManga = (event) => {
+        event.preventDefault()
         console.log(newManga)
-        for (const [key, value] of Object.entries(newManga)) {
-            if (value === "") {
-                setErrorMessage("All fields should not be empty.")
-                return
-            }
-        }
         axios.post(`${props.serverURL}/manga/add`,newManga).then(res => res.data)
         .then(() => {
             setErrorMessage('add')
